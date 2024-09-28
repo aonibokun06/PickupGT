@@ -3,9 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PickupGT: Schedule A Game</title>
+    <title>PickupGT</title>
+    <link rel="stylesheet" href="./static/styles/desktop.css" media="screen and (min-width: 700px)">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 699px)">
 </head>
 <body>
-    
+    <div class="landingPageContainer">
+        <div class="container">
+        <h1>Schedule Your Next Game:</h1>
+        <form onsubmit=runCode(event)>
+            <label for="sport">Sport:</label>
+            <select id="sport" name="sport">
+                <option value="basketball">Basketball</option>
+                <option value="soccer">Soccer</option>
+                <option value="tennis">Tennis</option>
+                <option value="volleyball">Volleyball</option>
+                <option value="ultimate">Pickleball</option>
+                
+            </select>
+            <br><br>
+
+            <label for="datetime">Date/Time:</label>
+            <input type="datetime-local" id="datetime" name="datetime">
+            <br><br>
+
+            <label for="location">Location:</label>
+            <select id="location" name="location" onchange="toggleOtherLocationInput(this)">
+                <option value="stadium">Stadium</option>
+                <option value="gym">Gym</option>
+                <option value="field">Field</option>
+                <option value="court">Court</option>
+                <option value="park">Park</option>
+                <option value="other">Other</option>
+            </select>
+            <br><br>
+            <input type="text" id="otherLocation" name="otherLocation" placeholder="Enter other location" style="display:none;">
+            <script>
+                function toggleOtherLocationInput(select) {
+                    var otherLocationInput = document.getElementById('otherLocation');
+                    if (select.value === 'other') {
+                        otherLocationInput.style.display = 'block';
+                    } else {
+                        otherLocationInput.style.display = 'none';
+                    }
+                }
+            </script>
+            <br><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" cols="50" placeholder="Provide extra details about your event. Example: 'Hey guys! We're meeting at court 5 in the gym. Girls'/Guys/Co-Ed Game' "></textarea>
+            <br><br>
+
+            <input type="submit" value="Schedule Game">
+        
+        </form>
+        <script>
+            function runCode(event) {
+                event.preventDefault();
+                var sport = document.getElementById('sport').value;
+                var datetime = document.getElementById('datetime').value;
+                var location = document.getElementById('location').value;
+                var otherLocation = document.getElementById('otherLocation').value;
+                var description = document.getElementById('description').value;
+
+                var message = 'You have scheduled a ' + sport + ' game on ' + datetime + ' at ' + location;
+                if (location === 'other') {
+                    message += ' (' + otherLocation + ')';
+                }
+                message += '. Description: ' + description;
+                alert(message);
+            }
+        </script>
+        </div>
+        
+
+       
+    </div>
 </body>
 </html>
