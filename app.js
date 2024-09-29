@@ -1,4 +1,4 @@
-require("dotenv").config()
+/* require("dotenv").config()
 
 //import
 const express = require("express") //imports express module
@@ -13,10 +13,10 @@ app.use(express.json()) //middle ware to parse Json
 app.use(express.static('public'));
 
 //connect to mongo db database
-/*mongoose.connect(process.env.DATABASE_URL)
+mongoose.connect(process.env.DATABASE_URL)
 const db = mongoose.connection
 db.on("error", (error)=> console.error(error))
-db.once("open", () => console.log("Connected to Database")) */
+db.once("open", () => console.log("Connected to Database")) 
 mongoose.connect('mongodb://localhost:27017/pickupGames', )
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.log(err));
@@ -62,5 +62,7 @@ app.listen(3000, (error) => {
     }
     console.log("Server: http://localhost:3000")
 });
+
 app.use('/', router);
-module.exports = router;
+module.exports = router; 
+*/
