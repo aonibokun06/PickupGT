@@ -1,9 +1,9 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "devStart": "nodemon app.js"
+    "devStart": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
