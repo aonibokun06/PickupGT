@@ -6,15 +6,27 @@
     <title>PickupGT</title>
     <link rel="stylesheet" href="./static/styles/desktop.css" media="screen and (min-width: 700px)">
     <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 699px)">
+    <script src="./static/javascript/script.js" defer></script>
 </head>
 <body>
-    <div class="popUpGame">
-        {awdfsd}
-        Delete Button
+    <div class="container" id="findGamePopupContainer">
+    <div class="popUpGameHide">
+        <img class="closeButton" src="./static/icons/close.png" alt="Close">
+        <div class="popUpGameUpper">
+            <h2>Game: {Sport}</h2>
+            <h2>Location: {Location}</h2>
+            <h2>Time: {Time}</h2>
+            <h2>Description: {Description}</h2>
+        </div>
+        <div class="popUpGameLower">
+            <div class="deleteButton">Delete</div>
+        </div>
     </div>
+</div>
     <div class="container">
+        
         <div class="container">  
-            <h1>Find Your Next Game!</h1>
+            <h2>Find Your Next Game!</h2>
             <h2>It’s easy! Choose your sport, location, and time! Or even filter it by descriptions.</h2> 
         </div>
       
