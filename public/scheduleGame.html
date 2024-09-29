@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PickupGT</title>
+    <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 700px)"/>
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 699px)"/>
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+    <div class="landingPageContainer">
+      <div class="container">
+        <h1>Schedule Your Next Game:</h1>
+        <form id="game-form">
+          <label for="sport">Sport:</label>
+          <select id="sport" name="sport">
+            <option value="basketball">Basketball</option>
+            <option value="soccer">Soccer</option>
+            <option value="tennis">Tennis</option>
+            <option value="volleyball">Volleyball</option>
+            <option value="ultimate">Pickleball</option>
+          </select>
+          <br /><br />
+
+          <label for="datetime">Date/Time:</label>
+          <input type="datetime-local" id="datetime" name="datetime" />
+          <br /><br />
+
+          <label for="location">Location:</label>
+          <select id="location" name="location">
+            <option value="stadium">Stadium</option>
+            <option value="gym">Gym</option>
+            <option value="field">Field</option>
+            <option value="court">Court</option>
+            <option value="park">Park</option>
+            <option value="other">Other</option>
+          </select>
+          <br /><br />
+
+          <label for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            cols="50"
+            placeholder="Provide extra details about your event. Example: 'Hey guys! We're meeting at court 5 in the gym. Girls'/Guys/Co-Ed Game' "
+          ></textarea>
+          <br /><br />
+          <button id="submit-button" type="submit">Schedule Game</button> 
+          
+        </form>
+       
+          <a href="findGame.html">Find Game</a>
+      </div>
+    </div>
+
+  </body>
+</html>
