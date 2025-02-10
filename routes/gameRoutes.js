@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Game = require('../models/game-model'); // Adjust the path if necessary
+const Game = require('../models/game-model');
 
 // POST route for scheduling games
 router.post("/", async (req, res) => {
