@@ -12,7 +12,6 @@ router.post("/", async (req, res) => {
         const gameCount = await Game.countDocuments();
         console.log(gameCount);
 
-        // Send a success response back to the client
         res.json({ message: 'Game scheduled successfully!' });
     } catch (error) {
         console.error('Error saving game:', error);

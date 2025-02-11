@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost:27017/pickupGames')
 
 
 // Use the game routes
-app.use('/gameRoutes', gameRoutes); // Mount the routes at /api/games
+app.use('/gameRoutes', gameRoutes); 
 
 app.listen(3000, (error) => {
     if (error) {
