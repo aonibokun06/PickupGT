@@ -1,7 +1,6 @@
 node_modules
 .env
 route.rest
-app.js
-subscribers.js
 mobile.css
 .DS_Store
+public

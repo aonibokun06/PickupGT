@@ -3,7 +3,7 @@ const router = express.Router();
 const Game = require('../models/game-model');
 
 // POST route for scheduling games
-router.post("/", async (req, res) => {
+router.post("/games", async (req, res) => {
     const { sport, datetime, location, description } = req.body;
     try {
         const game = new Game({ sport, datetime: new Date(datetime), location, description });
@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
 });
 
 // GET route for fetching games
-router.get("/", async (req, res) => {
+router.get("/games", async (req, res) => {
     try {
         const games = await Game.find();
         res.json(games);
@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/games:id', async (req, res) => {
     const { id } = req.params;
     try {
         const deletedGame = await Game.findByIdAndDelete(id);
