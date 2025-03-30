@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 
 export default function ScheduleGame() {
     const [sport, setSport] = useState("");
@@ -15,7 +15,6 @@ export default function ScheduleGame() {
             location,
             description
         }  
-        console.log()
         
         console.log("submitting, ", gameData)
         try {
@@ -39,23 +38,21 @@ export default function ScheduleGame() {
 
 
     return (
-        <form id="game-form" onSubmit={handleSubmit}>
-            <label htmlFor="sport">Sport:</label>
-            <select id="sport" name="sport" value = {sport} onChange={(e) => setSport(e.target.value)}>
+        <form id="game-form" onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full max-w-md">
+            <label htmlFor="sport" className="font-medium">Sport:</label>
+            <select id="sport" name="sport" value={sport} onChange={(e) => setSport(e.target.value)} className="border rounded p-2">
                 <option value="Basketball">Basketball</option>
                 <option value="Soccer">Soccer</option>
                 <option value="Tennis">Tennis</option>
                 <option value="Volleyball">Volleyball</option>
                 <option value="Pickleball">Pickleball</option>
             </select>
-            <br /><br />
 
-            <label htmlFor="datetime">Date/Time:</label>
-            <input type="datetime-local" id="datetime" name="datetime" value={datetime} onChange={(e) => setDatetime(e.target.value)} />
-            <br /><br />
+            <label htmlFor="datetime" className="font-medium">Date/Time:</label>
+            <input type="datetime-local" id="datetime" name="datetime" value={datetime} onChange={(e) => setDatetime(e.target.value)} className="border rounded p-2" />
 
-            <label htmlFor="location">Location:</label>
-            <select id="location" name="location" value={location} onChange={(e) => setLocation(e.target.value)}>
+            <label htmlFor="location" className="font-medium">Location:</label>
+            <select id="location" name="location" value={location} onChange={(e) => setLocation(e.target.value)} className="border rounded p-2">
                 <option value="Stadium">Stadium</option>
                 <option value="Gym">Gym</option>
                 <option value="Stamps">Stamps Field</option>
@@ -63,22 +60,20 @@ export default function ScheduleGame() {
                 <option value="Park">Park</option>
                 <option value="Other">Other</option>
             </select>
-            <br /><br />
 
-            <label htmlFor="description">Description:</label>
+            <label htmlFor="description" className="font-medium">Description:</label>
             <textarea
                 id="description"
                 name="description"
                 rows="4"
                 cols="50"
-                placeholder="Provide extra details about your event. Example: 'Hey guys! We're meeting at court 5 in the gym. Girls'/Guys/Co-Ed Game' "
+                placeholder="Provide extra details about your event..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+                className="border rounded p-2"
             ></textarea>
-            <br /><br />
-            <button id="submit-button" type="submit">Schedule Game</button> 
-      </form>  
 
+            <button id="submit-button" type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Schedule Game</button>
+        </form>
     )
-    
 }
