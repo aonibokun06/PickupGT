@@ -1,14 +1,19 @@
 import { useState } from "react";
 
 export default function ScheduleGame() {
-    const [sport, setSport] = useState("");
+    const [sport, setSport] = useState("Select a Sport");
     const [datetime, setDatetime] = useState("");
-    const [location, setLocation] = useState("");
+    const [location, setLocation] = useState("Select a Location");
     const [description, setDescription] = useState("");
 
     async function handleSubmit(event) {
-        
-        event.preventDefault();
+        setSport(sport.trim());
+
+        if (!sport || !datetime || !location || !description) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
         const gameData= {
             sport, 
             datetime, 
@@ -35,7 +40,6 @@ export default function ScheduleGame() {
             alert('Error scheduling game. Please try again.');
           }
     }
-
 
     return (
         <form id="game-form" onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full max-w-md">
