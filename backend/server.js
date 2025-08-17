@@ -19,10 +19,10 @@ mongoose.connect('mongodb://localhost:27017/pickupGames')
 // Use the game routes
 app.use('/api', gameRoutes); 
 
-app.listen(3000, (error) => {
+app.listen(5000, (error) => {
     if (error) {
         console.error("Error starting the server:", error);
         process.exit(1);
     }
-    console.log("Server: http://localhost:3000");
+    console.log("Server: http://localhost:5000");
 });
